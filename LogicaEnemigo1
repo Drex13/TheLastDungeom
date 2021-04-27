@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+unsing UnityEngine;
+using UnityEngine.AI;
+
+
+public class IA_Enemigo : MonoBehaviour 
+{
+    public GameObject target;
+    public NavMesh agent;
+    public float distancia;
+    
+    void Update () 
+    {
+        if(Vector3.Distance(Target.transform.position , transform.position)  < distancia  )
+        {
+            agent.SetDestination(target.transform.position);
+            agent.speed = 3;
+        }
+        else
+        {
+            agent.speed = 0;
+        }
+    }
+}
